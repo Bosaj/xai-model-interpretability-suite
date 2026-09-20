@@ -1,0 +1,363 @@
+
+Exercice 1:
+
+Cochez la bonne réponse:
+1. L'objectif principal de l'Explainable Al est de ?
+-Améliorer la vitesse d'entraînement
+-Réduire la taille des données
+-Rendre les décisions des modèles compréhensibles
+-Supprimer les biais automatiquement.
+
+2. Un modèle est dit black-box lorsqu'il:
+-Est linéaire
+-Est facilement interprétable
+-Utilise peu de variables.
+-A une logique interne opaque
+
+3. L'interprétabilité concerne principalement
+-L'explication post-hoc
+-La compréhension humaine du modèle
+-La performance du modèle
+-Le prétraitement des données
+
+4. L'XAI est particulièrement importante dans?
+-Les jeux vidéo
+-La compression d'images
+-Le clustering non supervisé
+-Les systèmes critiques
+
+5. L'explicabilité correspond plutôt à ?
+-Des techniques ajoutées pour expliquer un modèle complexe
+-La compréhension directe du modèle
+-La simplification des données
+-L'optimisation du modèle.
+
+6. Un système peut être transparent mais peu intelligible lorsque?
+-Son fonctionnement repose sur des règles simples.
+-Il expose toutes ses règles mais reste trop complexe pour l'humain
+-Il expose ses mécanismes internes, mais utilise des visualisations
+-Il fournit des explications detaillées, mais adaptées au niveau de l'utilisateur final
+
+7. Qui est responsable en cas de décision automatisée injuste?
+-Le modèle
+-L'utilisateur final
+-L'organisation qui déploite le système
+-Les données uniquement.
+
+8. La robustesse d'un modèle XAI signifie qu'il:
+-Les explications sont fideles au mécanisme interne du modèle
+-Résiste aux perturbations des données
+-Le modèle est à la fois précis et interprétable.
+-Est conforme au RGPD.
+
+9. Une explication erronée peut conduire a
+-Une meilleure confiance
+-Une meilleure performance
+-Aucun impact
+-Une mauvaise prise de décision
+
+10. Pourquoi l'intelligibilité depend-elle du public cible?
+-Les contraintes techniques de déploiement varient selon les plateformes.
+-Les utilisateurs ont des niveaux d'expertise différents
+-La performance du modèle se dégrade face à de nouvelles données.
+-Les architectures de modèles récentes sont par défaut moins explicables.
+-Les lois l'exigent.
+
+
+11. L'XAI ne vise PAS:
+-Expliquer les décisions des modèles
+-Améliorer la confiance
+-Remplacer complètement les modèles ML
+-Soutenir la prise de décision humaine.
+
+12. Quelle affirmation distingue le mieux l'interprétabilité de l'explicabilité?
+-L'interprétabilité s'applique uniquement aux réseaux de neurones.
+-L'explicabilité est intrinsèque au modèle.
+-L'interprétabilité concerne compréhensibles par conception. 
+-L'explicabilité garantit l'équité.
+
+13. Dans les domaines à haut risque (santé, finance...). I'XAI est essentielle principalement pour:
+-Accélérer les prédictions.
+-Assurer la conformité légale et la confiance.
+-Réduire le coût de calcul
+-Améliorer la généralisation.
+
+14. Quel compromis est fréquent en XAI?
+-Vitesse vs mémoire.
+-Biais vs robustesse.
+-Données vs modèle.
+-Précision vs interprétabilité.
+
+15. XAI et l'Équité sont liés car
+-XAI supprime automatiquement les biais
+-XAI permet de détecter les biais
+-XAI augmente les données
+-XAI remplace l'audit humain
+
+16. Une explication locale explique:
+-Une prédiction spécifique
+-Le comportement moyen du modèle
+-Les données d'entraînement
+-La structure interne du modèle.
+
+17. Une explication globale décrit:
+-Une seule instance
+-Le bruit des données
+-Le comportement général du modèle
+-Une erreur locale
+
+18. Les méthodes post-hoc sont appliquées:
+-Avant l'entraînement
+-Pendant l'entraînement
+-Après l'entraînement
+-A la collecte des données
+
+19. Les explications locales sont particulièrement utiles pour:
+-Le débogage global
+-La compréhension d'une décision individuelle
+-Ajuster les hyperparamètres afin d'améliorer la performance globale
+-Réduire la complexité du modèle par sélection automatique des variables
+
+20. Un même modèle peut avoir:
+-Un seul type d'explication.
+-Uniquement des explications locales.
+-Des explications locales et globales.
+-Aucune explication.
+
+21. ALE signifie:
+-Average Local Effects
+-Absolute Local Effects
+-Accumulated Local Effects
+-Aggregated Linear Effects.
+
+22. Les PDP peuvent être trompeurs lorsque:
+-Les données sont équilibrées
+-Les variables sont corrélées
+-Les données sont petites
+-Le modèle est linéaire
+
+23. Les ICE plots montrent:
+-Les effets par instance
+-Les effets globaux moyens
+-La variance du modèle
+-Les erreurs
+
+24. Les PDP montrent:
+-Les interactions complexes uniquement
+-Les effets locaux moyens
+-Les décisions individuelles
+-Les effets marginaux moyens
+-La variance du modèle
+
+25. Pourquoi ALE est-il considéré comme plus fiable que PDP dans certaines situations?
+-Parce qu'il est plus lent à calculer.
+-Parce qu'il suppose que les variables sont indépendantes.
+-Parce qu'il gère mieux la corrélation entre les variables.
+-Parce qu'il ne fonctionne qu'avec les réseaux neuronaux.
+-Parce qu'il est uniquement destiné aux modèles linéaires.
+
+26. SHAP peut fournir:
+-Seulement des explications locales
+-Seulement des explications globales
+-Des explications locales et globales
+-Aucune explication fidèle
+
+27. Une valeur SHAP positive indique que la variable
+-Réduit la pérdiction
+-N'a aucun effet
+-Augmente la prédiction
+-Est supprimée
+
+28. LIME est le plus adapté pour
+-Améliorer les performances de peidiction du modéle
+-Expliquer une prédiction individuelle
+-Fournir des explications globales sur le comportement général du modèle
+-Visualiser les correlations entre toutes les variables d'entrée
+
+29. Les contrefactuels sont particulièrement utiles pour
+-Les utilisateurs finaux
+-Le prétraitement
+-Le clustering
+-La réduction de bruit
+
+30. Quel est le principe fondamental de LIME pour expliquer les prédiction d'un modèle complexe
+-Il repose sur la théorie des jeux.
+-Il construit un modèle global simplifié pour tout le dataset
+-Il crée un modèle local simple qui approxime le comportement du modèle autour de la prédiction ciblée
+-Il utilise les gradients du modèle pour expliquer la sortie
+
+31. En XAI, une méthode est dite model-agnostic lorsque
+-Elle ne peut expliquer que des modèles linéaires simples
+-Elle ne peut expliquer que des modèles non Linéaires
+-Elle est spécifique aux arbres de décision
+-Elle nécessite que in modèle fournisse gradients internes
+-Elle peut être appliquée à n'importe quel type de modèle, indépendamment de sa structure
+
+32. LIME signifie
+-Linear Interpretable Model Estimator
+-Local Interpretable Model-agnostic Explanations
+-Linear Interpretable Machine Engine
+-Local Intelligent Model-agnostic Explanation
+
+33. SHAP est basé sur:
+-La théorie de l'information
+-La théorie des jeux.
+-La théorie des graphes
+-La théorie de la décision
+
+34. Le principe fondamental de SHAP (SHapley Additive exPlanations) repose sur le fait que:
+-L'influence de chaque variable calculée à partir du gradient local du modèle
+-Les contributions des variables sont estimées uniquement à partir de données corrélées
+-Chaque variable reçoit une contribution moyenne calculée sur toutes les permutations possibles des variables
+-SHAP construit un modèle local lineaire autour de chaque instance
+
+35. Un réseau de neurones profond est typiquement
+-Interprétable et explicable
+-Interprétable mais non explicable
+-Non interprétable mais explicable
+-Ni interprétable ni explicable
+
+36. L'XAI peut sider à détecter les biais en
+-Supprimant automatiquement les variables sensibles
+-Augmentant la taille du jeu de données
+-Chiffrant les données
+-Montrant l'influence des caractéristiques sur la prédiction
+
+37. Uns explication contrefactuelle répond à
+-Pourquoi le modèle est précis
+-Quelle variable est la plus importante
+-Quel changement minimal inverse la décision
+-Comment entraîner le modèle
+
+38. Pourquoi les explications fournies par LIME peuvent-elles être insuffisantes pour comprendre un modèle dans son ensenible"
+-Parce qu'elles sont basées sur une seule observation à la fois
+-Parce qu'elles sont toujours linéaires
+-Parce qu'elles sont spécifiques aux réseaux neuronaux
+-Parce qu'elles éliminent les variables corrélées
+
+39. Dans une explication LIME, une barre positive signifie que la variable
+-Est globalement importante
+-Réduit la variance globale
+-Est indépendante de la prédiction
+-Favorise localement la prédiction expliquée
+-Est corrélée à la cible réelle
+
+
+40. Quel critère est essentiel pour juger la qualité d'une explication XAI?
+-La complexité du modèle
+-La rapidité de calcul
+-Le type de données
+-La fidélité à la prédiction du modèle
+-Le framework utilisé
+
+Exercice 2:
+
+Cochez la bonne réponse:
+1) Situation 1: Un modèle de classification automatique est utilisé par un établissement bancaire pour évaluer les demandes de crédit.
+Pour un client donné, le modèle produit une décision de "crédit refusé". Afin de comprendre cette décision, une explication locale basée sur SHAP est générée. Le graphique SHAP révèle que:
+* Revenu et ancienneté ont des valeurs SHAP négatives,
+* Taux d'endettement a une valeur SHAP positive Elevée
+
+a) Quelle interprétation est la plus rigoureuse du point de vue SHAP?
+-Le revenu et l'ancienneté réduisent la probabilité de refus mais sont insuffisants pour compenser l'effet du taux d'endettement
+-Le revenu et l'ancienneté sont des variables peu importantes pour le modèle
+-Le modèle attribue une importance globale plus forte au taux d'endettement
+-La décision de refus est indépendante du contexte individuel du client
+-Le taux d'endettement est la principale variable qui oriente la prédiction vers le refus de crédit
+
+b) Dans le cadre du RGPD et du droit à l'explication d'une décision automatisée, quelle affirmation est la plus conforme aux exigences réglementaires?
+-La décision est acceptable si le modèle présente une performance prédictive élevée
+-La décision est conforme si le modèle est entièrement automatisé et cohérent
+-La décision est conforme si le modèle utilisé est transparent par conception
+-Les facteurs ayant contribué de manière significative à la décision individuelle peuvent être identifiés et expliqués
+-La stabilité de la prédiction garantit la conformité au RGPD
+
+2) Situation 2: Un modèle complexe (réseau de neurones) prédit le diagnostic médical d'un patient.
+Une explication LIME est générée pour ce patient.
+L'explication montre que certaines variables ont des poids élevés, mais une autre exécution de LIME donne une explication légèrement différente.
+
+a) Quelle est la cause la plus probable de cette variation?
+-Le caractère global de la visualisation LIME entraîne une perte de cohérence entre exécutions
+-La normalisation des données modifie l'échelle des coefficients du modèle explicatif
+-Le modèle de réseau neuronal ajuste dynamiquement ses paramètres lors de chaque prédiction
+-LIME génère un voisinage local à l'aide d'un échantillonnage aléatoire, ce qui peut modifier le modèle de substitution appris
+
+b) Quelle limite fondamentale de LIME est directement mise en évidence par cette situation? 
+-Absence d'explication locale
+-Hypothèse de causalité
+-Problème de stabilité et de cohérence
+-Incompatibilité avec les réseaux neuronaux
+-Incapacité à expliquer les classifications
+
+3) Situation 3: Un modèle prédit si un client obtiendra un crédit ou non. On regarde la variable revenue annuel dans un graphique SHAP
+On observe que pour des clients ayant le même revenu, l'effet sur la prédiction peut être positif pour certains et négatif pour d'autres.
+
+a) Que signifie cette observation?
+-Le revenu n'a aucun effet sur la prédiction
+-Le modèle est instable et incohérent
+-SHAP est mal calculé pour cette variable.
+-La dispersion des valeurs est due à du bruit dans les données
+-L'effet du revenu dépend du contexte et des interactions avec d'autres variables
+
+b) Par rapport à un PDP pour la même variable, quelle est la différence principale entre PDP et SHAP?
+-PDP montre l'effet moyen sur toutes les prédictions, SHAP montre l'effet pour chaque instance
+-SHAP montre l'effet moyen, PDP montre l'effet global sur toutes les prédictions
+
+
+
+Mes repones: 
+
+Exercice 1:
+1) -3
+2) -4
+3) -2
+4) -4
+5) -1
+6) -2
+7) -3
+8) -2
+9) -4
+10) -2
+11) -3
+12) -3
+13) -2
+14) -2
+15) -2
+16) -1
+17) -3
+18) -3
+19) -2
+20) -3
+21) -3
+22) -2
+23) -1
+24) -2
+25) -3
+26) -3
+27) -3
+28) -2
+29) -1
+30) -3
+31) -5
+32) -2
+33) -2
+34) -3
+35) -4
+36) -4
+37) -3
+38) -1
+39) -4
+40) -4
+
+Exercice 2:
+1)situation q
+2)-1
+b)-4
+
+2)situation 2
+a)-4
+b)-3
+
+3) situation 3
+a)-5
+b)-1 
