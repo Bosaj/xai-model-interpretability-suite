@@ -18,8 +18,8 @@ Ensure your system meets the required runtime dependencies:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/Bosaj/eniad-explainable-ai.git
-   cd eniad-explainable-ai
+   git clone https://github.com/Bosaj/xai-model-interpretability-suite.git
+   cd xai-model-interpretability-suite
    ```
 
 2. **Virtual Environment Setup (Python modules)**:

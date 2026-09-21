@@ -11,8 +11,8 @@
 <!-- Quality & Community Badges -->
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square" alt="MIT License" /></a>
-  <a href="https://github.com/Bosaj/eniad-explainable-ai/actions"><img src="https://img.shields.io/badge/CI%20Pipeline-Passing-brightgreen?style=flat-square&logo=githubactions" alt="CI Status" /></a>
-  <a href="https://github.com/Bosaj/eniad-explainable-ai/stargazers"><img src="https://img.shields.io/github/stars/Bosaj/eniad-explainable-ai?style=flat-square&logo=github&color=00d9ff" alt="Stars" /></a>
+  <a href="https://github.com/Bosaj/xai-model-interpretability-suite/actions"><img src="https://img.shields.io/badge/CI%20Pipeline-Passing-brightgreen?style=flat-square&logo=githubactions" alt="CI Status" /></a>
+  <a href="https://github.com/Bosaj/xai-model-interpretability-suite/stargazers"><img src="https://img.shields.io/github/stars/Bosaj/xai-model-interpretability-suite?style=flat-square&logo=github&color=00d9ff" alt="Stars" /></a>
   <a href="https://github.com/users/Bosaj/projects/36"><img src="https://img.shields.io/badge/Project_Board-Project_36-blue?style=flat-square&logo=github" alt="Project Board" /></a>
   <a href="https://github.com/stars/Bosaj/lists/eniad-academic-projects"><img src="https://img.shields.io/badge/Curated_List-ENIAD_Academic_Projects-gold?style=flat-square&logo=github" alt="Curated List" /></a>
   <img src="https://img.shields.io/badge/Institution-ENIAD%20Berkane-FF6B00?style=flat-square" alt="ENIAD Berkane" />
@@ -75,7 +75,7 @@ Comprehensive architectural explanations, step-by-step lab walk-throughs, and me
 - **In-Repository Wiki Mirror**: [`docs/wiki/Home.md`](docs/wiki/Home.md)
 - **Architecture Overview**: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
 - **Curriculum Matrix**: [`docs/CURRICULUM_MATRIX.md`](docs/CURRICULUM_MATRIX.md)
-- **GitHub Wiki**: [https://github.com/Bosaj/eniad-explainable-ai/wiki](https://github.com/Bosaj/eniad-explainable-ai/wiki)
+- **GitHub Wiki**: [https://github.com/Bosaj/xai-model-interpretability-suite/wiki](https://github.com/Bosaj/xai-model-interpretability-suite/wiki)
 
 ---
 
@@ -87,8 +87,8 @@ Comprehensive architectural explanations, step-by-step lab walk-throughs, and me
 
 ### Installation & Cloning
 ```bash
-git clone https://github.com/Bosaj/eniad-explainable-ai.git
-cd eniad-explainable-ai
+git clone https://github.com/Bosaj/xai-model-interpretability-suite.git
+cd xai-model-interpretability-suite
 ```
 
 ---

@@ -7,8 +7,8 @@ authors:
 title: "ENIAD Explainable AI (XAI) Suite"
 version: 1.0.0
 date-released: 2026-09-21
-url: "https://github.com/Bosaj/eniad-explainable-ai"
-repository-code: "https://github.com/Bosaj/eniad-explainable-ai"
+url: "https://github.com/Bosaj/xai-model-interpretability-suite"
+repository-code: "https://github.com/Bosaj/xai-model-interpretability-suite"
 keywords:
   - "artificial-intelligence"
   - "academic-curriculum"

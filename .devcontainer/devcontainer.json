@@ -1,5 +1,5 @@
 {
-  "name": "eniad-explainable-ai",
+  "name": "xai-model-interpretability-suite",
   "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
   "customizations": {
     "vscode": {
