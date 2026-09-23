@@ -12,8 +12,8 @@
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square" alt="MIT License" /></a>
   <a href="https://github.com/Bosaj/xai-model-interpretability-suite/actions"><img src="https://img.shields.io/badge/CI%20Pipeline-Passing-brightgreen?style=flat-square&logo=githubactions" alt="CI Status" /></a>
-  <a href="https://github.com/Bosaj/xai-model-interpretability-suite/stargazers"><img src="https://img.shields.io/github/stars/Bosaj/xai-model-interpretability-suite?style=flat-square&logo=github&color=00d9ff" alt="Stars" /></a>
-  <a href="https://github.com/users/Bosaj/projects/36"><img src="https://img.shields.io/badge/Project_Board-Project_36-blue?style=flat-square&logo=github" alt="Project Board" /></a>
+  <a href="https://github.com/Bosaj/xai-model-interpretability-suite"><img src="https://img.shields.io/github/stars/Bosaj/xai-model-interpretability-suite?style=flat-square&logo=github&color=00d9ff" alt="Stars" /></a>
+  <a href="https://github.com/users/Bosaj/projects"><img src="https://img.shields.io/badge/Project_Board-Project_36-blue?style=flat-square&logo=github" alt="Project Board" /></a>
   <a href="https://github.com/stars/Bosaj/lists/eniad-academic-projects"><img src="https://img.shields.io/badge/Curated_List-ENIAD_Academic_Projects-gold?style=flat-square&logo=github" alt="Curated List" /></a>
   <img src="https://img.shields.io/badge/Institution-ENIAD%20Berkane-FF6B00?style=flat-square" alt="ENIAD Berkane" />
 </p>
@@ -64,7 +64,7 @@ graph TD
 | [`TP3/`](TP3/) | SHAP (Shapley Values) | Cooperative game theory, TreeSHAP, KernelSHAP, force & summary plots |
 | [`TP4/`](TP4/) | LIME Local Surrogates | Sparse linear explainers, image and tabular perturbation sampling |
 | [`TP5/`](TP5/) | Deep Learning Saliency | Grad-CAM, gradient-weighted class activation mapping |
-| [`ELHADJI Oussama/`](ELHADJI%20Oussama/) | Research Project Report | Detailed experimental validation, comparative evaluation matrix |
+| [`ELHADJI Oussama/`](./ELHADJI%20Oussama/) | Research Project Report | Detailed experimental validation, comparative evaluation matrix |
 
 
 ---
