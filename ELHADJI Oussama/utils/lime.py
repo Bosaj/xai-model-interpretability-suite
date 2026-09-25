@@ -1,16 +1,15 @@
-
 import sys
-import os
-import random
+
 sys.path.insert(0, ".")
 
-import matplotlib.pyplot as plt
-# We can keep this import, or rely on passed objects effectively duck-typing
-# from Dataset.dataset import Dataset 
-import numpy as np
 import itertools
-from sklearn import tree
-from math import sqrt
+
+import matplotlib.pyplot as plt
+
+# We can keep this import, or rely on passed objects effectively duck-typing
+# from Dataset.dataset import Dataset
+import numpy as np
+
 
 def get_grid(model, dataset, points_per_feature=50):
     """
@@ -34,7 +33,7 @@ def get_grid(model, dataset, points_per_feature=50):
 
     # Use dataset.X directly to get min/max
     X_data = dataset.X
-    
+
     # Assuming the first two features in dataset.X correspond to the axes we want
     x1_min, x1_max = np.min(X_data[:, 0]), np.max(X_data[:, 0])
     x2_min, x2_max = np.min(X_data[:, 1]), np.max(X_data[:, 1])
@@ -68,7 +67,7 @@ def plot_grid(u, v, z, labels, title=None, embedded=False):
         labels (list): Labels for x and y axis.
         embedded (bool): Whether a new figure should be created or not.
 
-    Returns: 
+    Returns:
         plt (matplotlib.pyplot or utils.styled_plot.plt): Plot with applied color grid.
     """
 
@@ -79,13 +78,14 @@ def plot_grid(u, v, z, labels, title=None, embedded=False):
     plt.ylabel(labels[1])
     plt.title(title)
 
-    plt.pcolormesh(u, v, z, cmap='viridis', shading='auto', alpha=0.6)
+    plt.pcolormesh(u, v, z, cmap="viridis", shading="auto", alpha=0.6)
     plt.colorbar()
     # plt.grid(alpha=0)
 
     return plt
 
-def plot_points_in_grid(plt, Z=[], y=[], weights=None, colors={}, x_interest=None, size=20):
+
+def plot_points_in_grid(plt, Z=None, y=None, weights=None, colors=None, x_interest=None, size=20):
     """
     Given a plot, add scatter points from `Z` and `x_interest`.
 
@@ -99,12 +99,17 @@ def plot_points_in_grid(plt, Z=[], y=[], weights=None, colors={}, x_interest=Non
         size (int): Default size of the markers/points. Default is 8.
     """
 
-    w = 1
+    if colors is None:
+        colors = {}
+    if y is None:
+        y = []
+    if Z is None:
+        Z = []
 
     unique_y = list(set(y))
     # Default colors if not provided
-    default_colors = ['blue', 'orange', 'green', 'red']
-    
+    default_colors = ["blue", "orange", "green", "red"]
+
     for i, y_ in enumerate(unique_y):
         idx = np.where(y == y_)[0]
 
@@ -115,14 +120,15 @@ def plot_points_in_grid(plt, Z=[], y=[], weights=None, colors={}, x_interest=Non
         s = size
         if weights is not None:
             # Scale size by weight
-            s = weights[idx] * size * 5 # Amplify weight effect
+            s = weights[idx] * size * 5  # Amplify weight effect
 
-        plt.scatter(Z[idx, 0], Z[idx, 1], c=color, s=s, label=str(y_), edgecolor='k', alpha=0.8)
+        plt.scatter(Z[idx, 0], Z[idx, 1], c=color, s=s, label=str(y_), edgecolor="k", alpha=0.8)
 
     if x_interest is not None:
-        plt.scatter([x_interest[0]], [x_interest[1]],
-                    c='red', s=size*2, marker='X', label="Interest Point", zorder=10)
-    
+        plt.scatter(
+            [x_interest[0]], [x_interest[1]], c="red", s=size * 2, marker="X", label="Interest Point", zorder=10
+        )
+
     plt.legend()
 
 
@@ -143,18 +149,18 @@ def sample_points(model, dataset, num_points, seed=0):
     np.random.seed(seed)
     # hps = dataset.get_configspace().get_hyperparameters_dict()
     # labels = dataset.get_input_labels()
-    
+
     # Use dataset.X directly
     X_data = dataset.X
     x1_min, x1_max = np.min(X_data[:, 0]), np.max(X_data[:, 0])
     x2_min, x2_max = np.min(X_data[:, 1]), np.max(X_data[:, 1])
-    
+
     X_sampled = []
     for _ in range(num_points):
         x1 = np.random.uniform(x1_min, x1_max)
         x2 = np.random.uniform(x2_min, x2_max)
         X_sampled.append([x1, x2])
-    
+
     X_sampled = np.array(X_sampled)
     y_sampled = model.predict(X_sampled)
     return X_sampled, y_sampled
@@ -176,11 +182,11 @@ def weight_points(x_interest, Z, kernel_width=0.2):
     # Ensure x_interest is 1D array for broadcasting or same shape logic
     # Z is (N, 2), x_interest is (2,)
     d = np.linalg.norm(Z - x_interest, axis=1)
-    
+
     # Exponential kernel: w = sqrt(exp(-d^2 / width^2))
     # Often just exp(-d^2 / width^2) is used, but following prompt hint from earlier step 21
     weights = np.sqrt(np.exp(-(d**2) / (kernel_width**2)))
-    
+
     return weights
 
 
@@ -195,23 +201,23 @@ def fit_explainer_model(Z, y, weights=None, seed=0):
         seed (int): Seed for the decision tree.
 
     Returns:
-        model (DecisionTreeRegressor): Fitted explainer model. 
-        # Note: LIME usually uses Regression (Ridge) or a simple Tree. 
-        # If y is class labels, DecisionTreeClassifier might be better, 
-        # but the prompt/template implies returning a general model. 
+        model (DecisionTreeRegressor): Fitted explainer model.
+        # Note: LIME usually uses Regression (Ridge) or a simple Tree.
+        # If y is class labels, DecisionTreeClassifier might be better,
+        # but the prompt/template implies returning a general model.
         # DecisionTreeRegressor is robust if y is probabilities, or 0/1.
         # Let's use DecisionTreeClassifier if y is discrete (int), else Regressor.
     """
     from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
-    
+
     # Check if classification or regression
     # If y is float (probabilities), regressor. If int (classes), classifier.
     # Our usage in notebook passes class labels (0/1).
-    
+
     if np.issubdtype(y.dtype, np.integer) or len(np.unique(y)) <= 10:
-         model = DecisionTreeClassifier(max_depth=3, random_state=seed)
+        model = DecisionTreeClassifier(max_depth=3, random_state=seed)
     else:
-         model = DecisionTreeRegressor(max_depth=3, random_state=seed)
-         
+        model = DecisionTreeRegressor(max_depth=3, random_state=seed)
+
     model.fit(Z, y, sample_weight=weights)
     return model

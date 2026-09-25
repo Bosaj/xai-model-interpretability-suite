@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xai-model-interpretability-suite"
+version = "0.1.0"
+description = "Explainable AI (XAI) Model Interpretability Suite"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+exclude = [
+    ".git",
+    ".venv",
+    ".venv-tf",
+    "node_modules",
+    "__pycache__",
+    "*.ipynb",
+    "**/*.ipynb",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM"]
+ignore = ["B008", "E501"]
