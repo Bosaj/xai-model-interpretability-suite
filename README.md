@@ -5,10 +5,12 @@
 [![GHCR Container](https://img.shields.io/badge/GHCR-ghcr.io%2Fbosaj%2Fxai-model-interpretability-suite-brightgreen?logo=docker&logoColor=white)](https://github.com/Bosaj?tab=packages)
 [![Project Roadmap](https://img.shields.io/badge/Project%20Roadmap-%2336-8A2BE2?logo=github&logoColor=white)](https://github.com/users/Bosaj/projects/36)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Live%20Space-yellow?style=flat&logo=huggingface&logoColor=white)](https://huggingface.co/spaces/bosaj/xai-model-interpretability-suite)
+[![Live Web App](https://img.shields.io/badge/Live%20Web%20App-XAI%20Explorer-brightgreen?logo=googlechrome&logoColor=white)](https://bosaj-xai-model-interpretability-suite.static.hf.space)
 [![Streamlit App](https://img.shields.io/badge/Streamlit-Interactive%20XAI%20Explorer-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://share.streamlit.io)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 
-An end-to-end Explainable AI (XAI) exploration and evaluation suite covering academic practical works (TP1–TP5) on modern model interpretability techniques, complete with an interactive **Streamlit XAI Explorer Dashboard**.
+An end-to-end Explainable AI (XAI) exploration and evaluation suite covering academic practical works (TP1–TP5) on modern model interpretability techniques, complete with an interactive **Public Web Explorer Dashboard**: [https://bosaj-xai-model-interpretability-suite.static.hf.space](https://bosaj-xai-model-interpretability-suite.static.hf.space).
 
 ---
 
