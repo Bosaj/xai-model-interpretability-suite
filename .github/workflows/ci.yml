@@ -40,7 +40,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install QA tooling
-        run: pip install pytest numpy ruff
+        run: pip install pytest numpy matplotlib ruff
 
       - name: Run Ruff static analysis
         run: ruff check src/ tests/test_xai_architecture.py

@@ -24,8 +24,8 @@ WORKDIR /app
 COPY --from=builder --chown=app:app /opt/venv /opt/venv
 COPY --chown=app:app src ./src
 COPY --chown=app:app streamlit_app.py ./streamlit_app.py
-COPY --chown=app:app ".streamlit" ./.streamlit
-COPY --chown=app:app "ELHADJI Oussama" "./ELHADJI Oussama"
+COPY --chown=app:app [".streamlit", "./.streamlit"]
+COPY --chown=app:app ["ELHADJI Oussama", "./ELHADJI Oussama"]
 
 USER app
 EXPOSE 8501
