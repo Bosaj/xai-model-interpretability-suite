@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.11'
 
       - name: Validate Repository Governance & Structure
         run: |
@@ -27,3 +27,23 @@ jobs:
           test -f SECURITY.md && echo "SECURITY.md OK"
           test -f CODE_OF_CONDUCT.md && echo "CODE_OF_CONDUCT.md OK"
           test -f docs/wiki/Home.md && echo "docs/wiki/Home.md OK"
+
+  test-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install QA tooling
+        run: pip install pytest numpy ruff
+
+      - name: Run Ruff static analysis
+        run: ruff check src/ tests/test_xai_architecture.py
+
+      - name: Run automated test suite
+        run: pytest tests/ -v

@@ -1,25 +1,36 @@
-# Production Container for Python Machine Learning & Systems Architecture
-FROM python:3.11-slim
+# Stage 1: Build isolated virtual environment with pinned wheels
+FROM python:3.11-slim AS builder
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+WORKDIR /build
+COPY requirements.txt .
+RUN python -m venv /opt/venv \
+    && /opt/venv/bin/pip install --no-cache-dir --upgrade pip \
+    && /opt/venv/bin/pip install --no-cache-dir -r requirements.txt
+
+# Stage 2: Hardened non-root runtime image
+FROM python:3.11-slim AS runtime
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    HOME=/home/app \
+    PATH="/opt/venv/bin:$PATH"
+
+RUN groupadd --system app && useradd --system --gid app --create-home --home-dir /home/app app
 
 WORKDIR /app
+COPY --from=builder --chown=app:app /opt/venv /opt/venv
+COPY --chown=app:app src ./src
+COPY --chown=app:app streamlit_app.py ./streamlit_app.py
+COPY --chown=app:app ".streamlit" ./.streamlit
+COPY --chown=app:app "ELHADJI Oussama" "./ELHADJI Oussama"
 
-ENV PYTHONUNBUFFERED=1 \
-    PYTHONDONTWRITEBYTECODE=1 \
-    PIP_NO_CACHE_DIR=1
+USER app
+EXPOSE 8501
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
+HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
+  CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8501/_stcore/health')" || exit 1
 
-# Install python dependencies if present
-COPY requirements.txt* pyproject.toml* ./
-RUN if [ -f requirements.txt ]; then pip install --no-cache-dir -r requirements.txt; fi
-RUN if [ -f pyproject.toml ]; then pip install --no-cache-dir . || true; fi
-
-# Copy application source code
-COPY . .
-
-# Default entrypoint fallback
-CMD ["python", "-c", "import sys; print('Container initialized successfully for', sys.version)"]
+CMD ["streamlit", "run", "streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.headless=true"]
